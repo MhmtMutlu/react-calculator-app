@@ -1,0 +1,49 @@
+$first-theme-main-bg: hsl(222, 26%, 31%);
+$first-theme-keypad-bg: hsl(223, 31%, 20%);
+$first-theme-screen-bg: hsl(224, 36%, 15%);
+$first-theme-blue-bg: hsl(225, 21%, 49%);
+$first-theme-blue-shadow: hsl(224, 28%, 35%);
+$first-theme-red-bg: hsl(6, 63%, 50%);
+$first-theme-red-shadow: hsl(6, 70%, 34%);
+$first-theme-light-bg: hsl(30, 25%, 89%);
+$first-theme-light-shadow: hsl(28, 16%, 65%);
+$first-theme-dark-text: hsl(221, 14%, 31%);
+
+$second-theme-main-bg: hsl(0, 0%, 90%);
+$second-theme-keypad-bg: hsl(0, 5%, 81%);
+$second-theme-screen-bg: hsl(0, 0%, 93%);
+$second-theme-cyan-bg: hsl(185, 42%, 37%);
+$second-theme-cyan-shadow: hsl(185, 58%, 25%);
+$second-theme-orange-bg: hsl(25, 98%, 40%);
+$second-theme-orange-shadow: hsl(25, 99%, 27%);
+$second-theme-gray-bg: hsl(45, 7%, 89%);
+$second-theme-gray-shadow: hsl(35, 11%, 61%);
+$second-theme-dark-text: hsl(60, 10%, 19%);
+
+$third-theme-main-bg: hsl(268, 75%, 9%);
+$third-theme-keypad-bg: hsl(268, 71%, 12%);
+$third-theme-screen-bg: hsl(268, 71%, 12%);
+$third-theme-violet-bg: hsl(281, 89%, 26%);
+$third-theme-violet-shadow: hsl(285, 91%, 52%);
+$third-theme-cyan-bg: hsl(176, 100%, 44%);
+$third-theme-cyan-shadow: hsl(177, 92%, 70%);
+$third-theme-magenta-bg: hsl(268, 47%, 21%);
+$third-theme-magenta-shadow: hsl(290, 70%, 36%);
+$third-theme-dark-text: hsl(198, 20%, 13%);
+$third-theme-yellow-text: hsl(52, 100%, 62%);
+
+$white-text: hsl(0, 0, 100%);
+
+
+*, ::after, ::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-family: 'Spartan', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
