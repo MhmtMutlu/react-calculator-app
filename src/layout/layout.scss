@@ -1,0 +1,14 @@
+@use "../index";
+
+.layout-container{
+  width: 100vw;
+  height: 100vh;
+
+  .first-theme {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: index.$first-theme-main-bg;
+  }
+}
