@@ -1,0 +1,26 @@
+@use "./variables";
+
+@mixin button($bg-color, $shadow-color, $text-color, $font-size, $third: false) {
+  background-color: $bg-color;
+  border-bottom: 5px solid $shadow-color;
+  color: $text-color;
+  font-size: $font-size;
+
+  @if $third {
+    color: variables.$third-theme-yellow-text;
+  }
+}
+
+@mixin radio-button($bg-color) {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -1px;
+  left: -1px;
+  position: relative;
+  background-color: $bg-color;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: none;
+}
