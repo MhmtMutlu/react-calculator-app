@@ -4,7 +4,11 @@ import "./layout.scss";
 const Layout: React.FC<React.ReactNode> = ({ children }) => {
   return (
     <div className="layout-container">
-      <div className="first-theme">{children}</div>
+      <div className="third-theme">
+        <div className="calculator-container">
+          {children}
+        </div>
+      </div>
     </div>
   );
 };

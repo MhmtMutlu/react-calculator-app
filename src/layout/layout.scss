@@ -1,14 +1,61 @@
-@use "../index";
+@use "../assets/styles/variables";
+@use "../assets/styles/theme";
 
-.layout-container{
+.layout-container {
   width: 100vw;
   height: 100vh;
 
   .first-theme {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: index.$first-theme-main-bg;
+    @include theme.theme(
+      variables.$first-theme-main-bg,
+      variables.$white-text,
+      variables.$first-theme-screen-bg,
+      variables.$first-theme-red-bg,
+      variables.$first-theme-keypad-bg,
+      variables.$first-theme-dark-text,
+      variables.$first-theme-blue-bg,
+      variables.$first-theme-blue-shadow,
+      variables.$first-theme-red-bg,
+      variables.$first-theme-red-shadow,
+      variables.$first-theme-light-bg,
+      variables.$first-theme-light-shadow,
+      false
+    );
+  }
+
+  .second-theme {
+    @include theme.theme(
+      variables.$second-theme-main-bg,
+      variables.$second-theme-dark-text,
+      variables.$second-theme-screen-bg,
+      variables.$second-theme-orange-bg,
+      variables.$second-theme-keypad-bg,
+      variables.$second-theme-dark-text,
+      variables.$second-theme-cyan-bg,
+      variables.$second-theme-cyan-shadow,
+      variables.$second-theme-orange-bg,
+      variables.$second-theme-orange-shadow,
+      variables.$second-theme-gray-bg,
+      variables.$second-theme-gray-shadow,
+      false
+    );
+  }
+
+  .third-theme {
+    @include theme.theme(
+      variables.$third-theme-main-bg,
+      variables.$third-theme-yellow-text,
+      variables.$third-theme-screen-bg,
+      variables.$third-theme-cyan-bg,
+      variables.$third-theme-keypad-bg,
+      variables.$third-theme-dark-text,
+      variables.$third-theme-violet-bg,
+      variables.$third-theme-violet-shadow,
+      variables.$third-theme-cyan-bg,
+      variables.$third-theme-cyan-shadow,
+      variables.$third-theme-magenta-bg,
+      variables.$third-theme-magenta-shadow,
+      true
+    );
   }
 }
