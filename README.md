@@ -30,26 +30,25 @@ Users should be able to:
 
 ### Screenshot
 
-![Project Image](/react-calculator-app/public/assets/screenshot1.png)
-![Project Image](/react-calculator-app/public/assets/screenshot2.png)
-![Project Image](/react-calculator-app/public/assets/screenshot3.png)
+![Project Image](/public/assets/screenshot1.png)
+![Project Image](/public/assets/screenshot2.png)
+![Project Image](/public/assets/screenshot3.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/calculator-app-coded-with-reactjs-scss-and-typescript-GV_VfqbC1)
+- Live Site URL: [Live Preview](https://frontend-mentor-calc-app.netlify.app/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
+- [React](https://reactjs.org/) - JS library
+- [SCSS](https://sass-lang.com/guide) - For styles
+- [TypeScript](https://www.typescriptlang.org/) - Type Safety JS
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [SCSS](https://sass-lang.com/guide) - For styles
 
 ### What I learned
 
