@@ -17,75 +17,37 @@ const CalcContextProvider: React.FC<IContextProvider> = ({ children }) => {
   const [screenText, setScreenText] = useState<string>(initialContextState.screenText);
   const [reset, setReset] = useState<boolean>(false);
 
-  const changeMainText = (value: string,isNumber: boolean,isOperator: boolean) => {
+  const changeMainText = (value: string, isNumber: boolean, isOperator: boolean ) => {
     if (isNumber) {
-      if (reset) {
-        setMainText("");
-      }
-      setMainText((prevState) => prevState + value);
-      setReset(false);
+      operations.clickButton(value);
     } else if (isOperator) {
       switch (value) {
         case "DEL":
-          if (mainText !== "" && !reset) {
-            const newText = mainText.slice(0, -1);
-            setMainText(newText);
-          }
+          operations.delete();
           break;
 
         case "RESET":
-          setMainText("");
-          setLastText("");
-          setScreenText("");
+          operations.reset();
           break;
 
         case "+":
-          if (lastText === "") {
-            ifLastTextIsClear(value);
-          } else if (lastOperator !== value) {
-            ifOperatorDoesntMatch(value);
-          } else {
-            ifOperatorMatches(value);
-          }
+          operations.maths(value);
           break;
 
         case "-":
-          if (lastText === "") {
-            ifLastTextIsClear(value);
-          } else if (lastOperator !== value) {
-            ifOperatorDoesntMatch(value);
-          } else {
-            ifOperatorMatches(value);
-          }
+          operations.maths(value);
           break;
 
         case "*":
-          if (lastText === "") {
-            ifLastTextIsClear(value);
-          } else if (lastOperator !== value) {
-            ifOperatorDoesntMatch(value);
-          } else {
-            ifOperatorMatches(value);
-          }
+          operations.maths(value);
           break;
 
         case "/":
-          if (lastText === "") {
-            ifLastTextIsClear(value);
-          } else if (lastOperator !== value) {
-            ifOperatorDoesntMatch(value);
-          } else {
-            ifOperatorMatches(value);
-          }
+          operations.maths(value);
           break;
 
         case "=":
-          if (lastText === "") {
-            setMainText(mainText);
-          } else {
-            ifOperatorDoesntMatch("");
-            setLastText("");
-          }
+          operations.equal();
           break;
 
         default:
@@ -99,19 +61,59 @@ const CalcContextProvider: React.FC<IContextProvider> = ({ children }) => {
     }
   };
 
+  const operations = {
+    clickButton: (value: string) => {
+      if (reset) {
+        setMainText("");
+      }
+      setMainText((prevState) => prevState + value);
+      setReset(false);
+    },   
+    delete: () => {
+      if (mainText !== "" && !reset) {
+        const newText = mainText.slice(0, -1);
+        setMainText(newText);
+      }
+    },
+    reset: () => {
+      setMainText("");
+      setLastText("");
+      setScreenText("");
+    },
+    maths: (value: string) => mathOperations(value),
+    equal: () => {
+      if (lastText === "") {
+        setMainText(mainText);
+      } else {
+        ifOperatorDoesntMatch("");
+        setLastText("");
+      }
+    },
+  };
+
+  const mathOperations = (value: string) => {
+    if (lastText === "") {
+      ifLastTextIsClear(value);
+    } else if (lastOperator !== value) {
+      ifOperatorDoesntMatch(value);
+    } else {
+      ifOperatorMatches(value);
+    }
+  };
+
   const ifLastTextIsClear = (value: string) => {
     setLastText(mainText);
     setScreenText(mainText);
     setMainText("");
     setLastOperator(value);
-  }
+  };
 
   const ifOperatorDoesntMatch = (value: string) => {
     let result = eval(lastText + lastOperator + mainText);
     if (result && result.toString().length > 8) {
-      result = parseFloat(result)
+      result = parseFloat(result);
     }
-    console.log(typeof result, result.toString().length)
+    console.log(typeof result, result.toString().length);
     setLastText(result);
     setScreenText(screenText + lastOperator + mainText);
     setMainText(result);
@@ -122,9 +124,9 @@ const CalcContextProvider: React.FC<IContextProvider> = ({ children }) => {
   const ifOperatorMatches = (value: string) => {
     let result = eval(lastText + value + mainText);
     if (result && result.toString().length > 8) {
-      result = parseFloat(result)
+      result = parseFloat(result);
     }
-    console.log(typeof result, result.toString().length)
+    console.log(typeof result, result.toString().length);
     setLastText(result);
     setScreenText(screenText + value + mainText);
     setMainText(result);
@@ -133,9 +135,7 @@ const CalcContextProvider: React.FC<IContextProvider> = ({ children }) => {
   };
 
   return (
-    <CalcContext.Provider
-      value={{ mainText, screenText, changeMainText }}
-    >
+    <CalcContext.Provider value={{ mainText, screenText, changeMainText }}>
       {children}
     </CalcContext.Provider>
   );
